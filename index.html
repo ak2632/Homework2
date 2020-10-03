@@ -6,3 +6,100 @@
         <title>Homework 2</title>
 
         <meta charset="UTF-8">
+
+            <script>
+
+            function validate()
+
+            {
+                var firstName=document.getElementById("firstNameBox").value;
+
+                var lastName=document.getElementById("lastNameBox").value;
+
+                var email=document.getElementById("emailBox").value;
+
+                var nameExpression= /^[A-Za-z]+$/;
+
+                var emailExpresson=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                if(firstName=="" || lastName=="" || email=="")
+
+                {
+
+                    alert("Complete the form before submitting");
+
+                    return false;
+
+                }
+
+                else if(!nameExpression.test(firstName))
+
+                {
+
+                    alert("First name should only contain letters");
+
+                    return false;
+
+                }
+
+                else if(!nameExpression.test(lastName))
+
+                {
+
+                    alert("Last name should only contain letters");
+
+                }
+
+                else if(!emailExpresson.test(email))
+
+                {
+
+                    alert("Enter valid email");
+
+                    return false;
+
+                }
+
+                else{
+
+                    alert("Validated");
+
+                }
+
+            }
+
+            
+
+            </script>
+
+    </head>
+
+    <body>
+
+    <form onsubmit="return validate()">
+
+    First Name :
+
+    <input type="text" id="firstNameBox"/>
+
+    <br><br>
+
+    Last Name :
+
+    <input type="text" id="lastNameBox"/>
+
+    <br><br>
+
+    Email :<input type="text" id="emailBox"/>
+
+    <br><br>
+
+    <input type="submit" value="Sign-up"/>
+
+    <input type="reset" value="Cancel"/>
+
+    </form>
+
+    </body>
+
+</html>
